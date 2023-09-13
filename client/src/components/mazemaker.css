@@ -1,0 +1,149 @@
+.context-menu {
+  position: absolute;
+  text-align: center;
+  background: lightgray;
+  border: 1px solid black;
+  z-index:99;
+}
+
+.context-menu ul {
+  padding: 0px;
+  margin: 0px;
+  min-width: 150px;
+  list-style: none;
+}
+
+.context-menu ul li {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  border: 1px solid black;
+}
+
+.context-menu ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.context-menu ul li:hover {
+  background: darkgray;
+}
+
+.main-mazemaker-body {
+  display: flex;
+}
+
+.mazemaker-display {
+  min-width: 50%;
+}
+
+.mazemaker-settings-dimensions-input {
+  width: 50px;
+}
+
+.mazemaker-settings {
+  margin: 20px;
+}
+
+.maze-parent {
+  background-color: var(--maze-parent-background);
+}
+
+.maze-main {
+  display: grid;
+  margin: 20px;
+  background-color: var(--maze-background);
+  width: fit-content;
+}
+
+.grid-item {
+  background-color: var(--maze-background);
+}
+
+.horizontal-wall:hover,
+.vertical-wall:hover {
+  background-color: var(--gridline-hover);
+}
+
+.wall-show {
+  background-color: var(--gridline-color);
+}
+
+.intersection-wall.unfill {
+  background-color: var(--maze-background);
+}
+
+.wall-hidden, .wall-hidden>div {
+  background-color: var(--maze-background);
+}
+
+.bottomextreme-wall,
+.rightextreme-wall,
+.grid-item.bottomextreme,
+.grid-item.rightextreme {
+  background-color: var(--maze-parent-background) !important;
+}
+
+.fill {
+  background-color: var(--wall-color);
+}
+
+.fill:hover,
+.intersection-wall-horizontal:hover,
+.intersection-wall-vertical:hover {
+  background-color: var(--wall-hover);
+}
+
+.vertical-wall.unfill {
+  width: calc(100%-2px);
+  border-left: var(--gridline-width) solid var(--maze-background);
+  border-right: var(--gridline-width) solid var(--maze-background);
+}
+
+.horizontal-wall.unfill {
+  border-top: var(--gridline-width) solid var(--maze-background);
+  border-bottom: var(--gridline-width) solid var(--maze-background);
+}
+
+.intersection-wall.fill .intersection-wall-horizontal,
+.intersection-wall.fill .intersection-wall-vertical {
+  background-color: var(--wall-color);
+}
+
+.intersection-wall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intersection-wall-horizontal {
+  position: absolute;
+  z-index: 2;
+  width: var(--wall-size);
+  height: var(--intersection-gridline-width);
+  background-color: var(--gridline-color);
+}
+
+.intersection-wall-vertical {
+  z-index: 1;
+  width: var(--intersection-gridline-width);
+  height: var(--wall-size);
+  background-color: var(--gridline-color);
+}
+
+.intersection-wall.fill {
+  border: 0;
+}
+
+:root {
+  --maze-background: rgba(255, 255, 255);
+  --gridline-width: 2px;
+  --intersection-gridline-vertical-width: 7px;
+  --intersection-gridline-horizontal-width: 7px;
+  --intersection-gridline-width: 7px;
+  --wall-size: 20px;
+  --wall-color: black;
+  --maze-parent-background: rgba(0, 253, 106, 0.8);
+  --gridline-color: rgba(209, 209, 209, 0.555);
+  --wall-hover: rgb(170, 0, 0);
+  --gridline-hover: rgb(255, 0, 0);
+}

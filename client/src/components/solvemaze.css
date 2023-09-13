@@ -1,0 +1,13 @@
+.solve-maze-main{
+    display: flex;
+}
+
+.code-area{
+    width: 100%;
+    height: 400px;
+}
+
+.canvas-parent{
+    display: flex;
+    flex-direction: column;
+}
